@@ -28,7 +28,7 @@ const Navbar = () => {
         <ul className="hidden links md:flex space-x-6">
           <li className="nav-item"><a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">About</a></li>
           <li className="nav-item"><a href="#skills" className="text-gray-300 hover:text-white transition-colors duration-300">Skills</a></li>
-          <li className="nav-item"><a href="#experience" className="text-gray-300 hover:text-white transition-colors duration-300">Work Experience</a></li>
+          <li className="nav-item"><a href="#experience" className="text-gray-300 hover:text-white transition-colors duration-300">Experience</a></li>
           <li className="nav-item"><a href="#projects" className="text-gray-300 hover:text-white transition-colors duration-300">Projects</a></li>
           <li className="nav-item"><a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
         </ul>
