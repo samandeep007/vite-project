@@ -223,7 +223,7 @@ const About = () => {
   }, { scope: containerRef });
 
   return (
-    <section id="about" ref={containerRef} className="relative min-h-screen text-slate-200 flex items-center justify-center snap-start overflow-hidden">
+    <section id="about" ref={containerRef} className="relative min-h-screen py-8 md:p-0 text-slate-200 flex items-center justify-center snap-start overflow-hidden">
       {/* Subtle Grid Overlay */}
       <div
         className="absolute inset-0 grid-overlay opacity-10"
