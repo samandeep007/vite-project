@@ -18,31 +18,49 @@ const Certifications = () => {
       name: 'Learn JavaScript Course',
       issuer: 'Codecademy',
       date: 'May 2024',
-      link: 'https://www.codecademy.com/users/samandeep07/achievements', // Placeholder; replace with actual if available
+      link: 'https://www.codecademy.com/profiles/java6073984474/certificates/705dcb15de0da4dd9d9fc4f3274b430e', // Placeholder; replace with actual if available
     },
     {
       name: 'Learn C# Course',
       issuer: 'Codecademy',
       date: 'Nov 2023',
-      link: 'https://www.codecademy.com/users/samandeep07/achievements',
+      link: 'https://www.codecademy.com/profiles/java6073984474/certificates/65f0ff88f4fc58e0536b3b51648dff24',
     },
     {
       name: 'Learn Python 3 Course',
       issuer: 'Codecademy',
       date: 'Nov 2023',
-      link: 'https://www.codecademy.com/users/samandeep07/achievements',
+      link: 'https://www.codecademy.com/profiles/java6073984474/certificates/6c152bd262967f8c941c9707ed636bda',
     },
     {
       name: 'Problem Solving (Intermediate)',
       issuer: 'HackerRank',
       date: 'Nov 2023',
-      link: 'https://www.hackerrank.com/certificates/problem_solving_intermediate/samandeep07', // Placeholder badge link
+      link: 'https://www.hackerrank.com/certificates/90fec59f3397', // Placeholder badge link
     },
     {
       name: 'SQL (Intermediate)',
       issuer: 'HackerRank',
       date: 'Nov 2023',
-      link: 'https://www.hackerrank.com/certificates/sql_intermediate/samandeep07',
+      link: 'https://www.hackerrank.com/certificates/1a9344f89df3',
+    },
+    {
+      name: 'Learn Node.js Course',
+      issuer: 'Codecademy',
+      date: 'Nov 2023',
+      link: 'https://www.codecademy.com/profiles/java6073984474/certificates/240305d50b925c17868f1ac7a21a3261',
+    },
+    {
+      name: 'SQL (Basic)',
+      issuer: 'HackerRank',
+      date: 'Nov 2023',
+      link: 'https://www.hackerrank.com/certificates/181cc2f5af84',
+    },
+    {
+      name: 'Learn Python 2 Course',
+      issuer: 'Codecademy',
+      date: 'Nov 2023',
+      link: 'https://www.codecademy.com/profiles/java6073984474/certificates/b97fd4d87a816c761a674af1b5391ef1',
     },
   ];
 
@@ -58,14 +76,14 @@ const Certifications = () => {
 
     // Cards: Sophisticated 3D tilt on hover, flip on scroll
     cardRefs.current.forEach((card, idx) => {
-      const state = Flip.getState(card);
+ 
       gsap.from(card, {
         opacity: 0,
         rotationY: 180,
         duration: 1.5,
         delay: idx * 0.2,
         scrollTrigger: { trigger: card, start: 'top 85%' },
-        onComplete: () => Flip.from(state, { duration: 1, ease: 'power3.out', absolute: true }),
+
       });
 
       // 3D tilt on mouse move
@@ -118,7 +136,7 @@ const Certifications = () => {
       {isPdfOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closePdf}>
           <div ref={pdfModalRef} className="w-11/12 h-4/5 max-w-4xl bg-gray-900 rounded-2xl overflow-hidden border border-indigo-500/30 shadow-2xl transform-style-preserve-3d" onClick={(e) => e.stopPropagation()}>
-            <iframe src="/Samandeep Singh - Full Stack Developer Resume.pdf" width="100%" height="100%" title="Resume PDF" className="border-none"></iframe> {/* Adjust PDF path */}
+            <iframe src="src/assets/resume.pdf" width="100%" height="100%" title="Resume PDF" className="border-none"></iframe> {/* Adjust PDF path */}
             <button onClick={closePdf} className="absolute top-4 right-4 text-white text-3xl hover:text-indigo-300 transition-colors">×</button>
           </div>
         </div>

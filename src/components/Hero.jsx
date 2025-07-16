@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/SplitText';
 
-
 gsap.registerPlugin(SplitText);
 
 const Hero = () => {
@@ -11,6 +10,7 @@ const Hero = () => {
   const titleRef = useRef();
   const subtitleRef = useRef();
   const ctaRef = useRef();
+  const githubRef = useRef();
   const shapesRef = useRef([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Hero = () => {
         const dx = (e.clientX - (rect.left + rect.width / 2)) / window.innerWidth * 50;
         const dy = (e.clientY - (rect.top + rect.height / 2)) / window.innerHeight * 50;
         gsap.to(shape, {
-          x: -dx * (index + 1) * 0.5, // Parallax-like offset
+          x: -dx * (index + 1) * 0.5,
           y: -dy * (index + 1) * 0.5,
           duration: 0.5,
           ease: 'power2.out',
@@ -35,7 +35,7 @@ const Hero = () => {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    // Animate abstract shapes with innovative "neural network" connection effect
+    // Animate abstract shapes with "neural network" connection effect
     shapesRef.current.forEach((shape, index) => {
       tl.from(shape, {
         opacity: 0,
@@ -44,8 +44,6 @@ const Hero = () => {
         duration: 1.5,
         delay: index * 0.3,
       }, 0);
-
-      // Subtle pulsing and rotation loop for each shape
       gsap.to(shape, {
         scale: () => gsap.utils.random(0.8, 1.2),
         rotation: '+=30',
@@ -56,10 +54,7 @@ const Hero = () => {
       });
     });
 
-    // Connect shapes with animated lines (simulated with pseudo-elements or additional SVGs)
-    // For simplicity, animate opacity and scale as "connections"
-
-    // Advanced title animation: chars assemble like code compiling
+    // Title animation: chars assemble like code compiling
     const titleSplit = new SplitText(titleRef.current, { type: 'chars, words' });
     tl.from(titleSplit.chars, {
       opacity: 0,
@@ -78,24 +73,42 @@ const Hero = () => {
       stagger: 0.03,
     }, '-=0.5');
 
-    // CTA with innovative "energy pulse" effect
-    tl.from(ctaRef.current, {
-      opacity: 0,
-      scale: 0.5,
-      duration: 1,
-      onStart: () => {
-        gsap.to(ctaRef.current, {
-          boxShadow: '0 0 20px rgba(99, 102, 241, 0.8)',
-          duration: 1.5,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
+    // CTA and GitHub buttons with energy pulse effect
+    [ctaRef.current, githubRef.current].forEach((button) => {
+      tl.from(button, {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
+        onStart: () => {
+          gsap.to(button, {
+            boxShadow: '0 0 20px rgba(99, 102, 241, 0.8)',
+            duration: 1.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+          });
+        },
+      }, '-=0.5');
+      // Hover effect for both buttons
+      button.addEventListener('mouseenter', () => {
+        gsap.to(button, {
+          scale: 1.1,
+          boxShadow: '0 0 30px rgba(99, 102, 241, 1)',
+          duration: 0.3,
+          ease: 'power2.out',
         });
-      },
-    }, '-=0.5');
+      });
+      button.addEventListener('mouseleave', () => {
+        gsap.to(button, {
+          scale: 1,
+          boxShadow: '0 0 20px rgba(99, 102, 241, 0.8)',
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+    });
 
-
-// Background gradient shift for dynamic feel
+    // Background gradient shift
     gsap.to(containerRef.current, {
       background: 'linear-gradient(135deg, #111827, #1e3a8a, #290916)',
       duration: 10,
@@ -109,9 +122,9 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="relative py-32  bg-gradient-to-br from-gray-950 via-indigo-950 to-purple-950 min-h-screen flex flex-col justify-center items-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center snap-start overflow-hidden"
     >
-      {/* Abstract Shapes: Innovative "cosmic code nebula" with interactive, morph-like animations */}
+      {/* Abstract Shapes */}
       <svg ref={(el) => (shapesRef.current[0] = el)} className="absolute top-20 left-10 w-32 h-32 opacity-50" viewBox="0 0 200 200" style={{ transform: 'translateZ(0)' }}>
         <path fill="#6366f1" d="M48.2,-62.8C62.7,-52.3,74.8,-36.3,82.2,-18.6C89.6,-0.9,92.3,18.5,85.3,34.3C78.3,50.1,61.6,62.3,45.6,69.9C29.6,77.5,14.8,80.5,-1.3,82.2C-17.4,83.9,-34.8,84.3,-49.1,77C-63.4,69.7,-74.6,54.7,-81.4,37.7C-88.2,20.7,-90.6,1.7,-85.9,-15.3C-81.2,-32.3,-69.4,-47.3,-55,-58.3C-40.6,-69.3,-23.3,-76.3,-4.8,-72.9C13.7,-69.5,27.5,-55.7,48.2,-62.8Z" transform="translate(100 100)" />
       </svg>
@@ -130,35 +143,39 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 max-w-full mx-auto px-4">
-       
-         <h1
-        id="name"
+        <h1
+          id="name"
           ref={titleRef}
-          className="text-5xl  md:text-[110px]  font-extrabold tracking-tight text-white leading-tight"
+          className="text-5xl md:text-[110px] font-extrabold tracking-tight text-white leading-tight"
         >
-          <span className='text-[170px]'>Hey!</span>  <br/> I'm Samandeep Singh
+          <span className="text-[170px]">Hey!</span> <br /> I'm Samandeep Singh
         </h1>
         <p
-        id="heading"
+          id="heading"
           ref={subtitleRef}
           className="text-xl md:text-2xl mt-4 text-gray-200 font-light max-w-3xl"
         >
           A Full-Stack Software Developer | Pioneering interactive experiences with React, Node.js, and advanced GSAP animations.
         </p>
-        <a
-          ref={ctaRef}
-          href="#projects"
-          className="mt-8 inline-block links bg-indigo-600 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          Discover My Innovations
-        </a>
-                <a
-          ref={ctaRef}
-          href="#projects"
-          className="mt-8 mx-4 inline-block links bg-gray-950 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          Visit Github
-        </a>
+        <div className="mt-8 flex gap-4">
+          <a
+            ref={ctaRef}
+            href="#projects"
+            className="inline-flex items-center bg-indigo-600 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            Discover My Innovations
+          </a>
+          <a
+            ref={githubRef}
+            href="https://github.com/your-username"
+            className="inline-flex items-center bg-gray-950 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            Visit GitHub
+          </a>
+        </div>
       </div>
 
       {/* Down arrow with pulse animation */}

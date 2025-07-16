@@ -12,16 +12,18 @@ import Education from './components/Education.jsx';
 import Projects from './components/Projects.jsx';
 import HorizontalScrollSection from './components/HorizontalScrollSection.jsx';
 import WorkExperience from './components/WorkExperience.jsx';
+import ProjectGallery from './components/ProjectGallery.jsx';
+
 
 function App() {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <Navbar />
       <Hero />
-      {/* <About/> */}
-           
+      <About/>
 <HorizontalScrollSection/>
       <SkillsShowcase/>
+           <ProjectGallery/>
        <Education/>
       <Certifications/>
   <WorkExperience/>

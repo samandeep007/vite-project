@@ -13,19 +13,36 @@ const WorkExperience = () => {
   const cardRefs = useRef([]);
   const shapeRefs = useRef([]);
 
-  const experiences = [
-    {
-      title: 'Freelance Full Stack Developer',
-      date: 'May 2023 - Present',
-      description: 'Integrated Firebase for real-time user authentication and session management, accommodating up to 100 simultaneous connections. Optimized front-end with React, achieving a 25% reduction in load time through code splitting and lazy loading.',
-    },
-    {
-      title: 'Peer Tutor (Volunteer)',
-      date: 'Feb 2024 - Present',
-      institution: 'Bow Valley College',
-      description: 'Guided students in software development concepts, project debugging, and best practices.',
-    },
-  ];
+ const experiences = [
+  {
+    title: 'Lead React Developer',
+    date: 'Aug 2021 - Jun 2024',
+    institution: 'Virtual Employee Private Limited',
+    description:
+      'Developed and implemented full-stack solutions that incorporated the latest industry trends, improving system performance and user experience. Led development of scalable web applications using React, Node.js, and MongoDB, increasing productivity by 40%. Built secure RESTful APIs with Express.js, enhancing performance for high-traffic systems. Mentored junior developers, reducing onboarding time by 25%.',
+  },
+  {
+    title: 'Full Stack Developer',
+    date: 'Jan 2023 - May 2023',
+    institution: 'Hermes Aerospace Corporation',
+    description:
+      'Developed a MERN stack e-commerce application with Stripe integration, boosting sales by 25%. Designed an admin dashboard, POS, and Inventory Management System, cutting order processing time by 40%. Integrated WebSocket and GraphQL for real-time functionality, improving user satisfaction by 20%.',
+  },
+  {
+    title: 'Freelance Full Stack Developer',
+    date: 'May 2023 - Present',
+    description:
+      'Integrated Firebase for real-time user authentication and session management, accommodating up to 100 simultaneous connections. Optimized front-end with React, achieving a 25% reduction in load time through code splitting and lazy loading.',
+  },
+  {
+    title: 'Peer Tutor (Volunteer)',
+    date: 'Feb 2024 - Present',
+    institution: 'Bow Valley College',
+    description:
+      'Guided students in software development concepts, project debugging, and best practices.',
+  },
+];
+
 
   useEffect(() => {
     // Generate modern abstract shapes (blob-like, non-circular)
@@ -165,7 +182,7 @@ const WorkExperience = () => {
             <div
               key={exp.title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className="relative p-8 bg-black/70 backdrop-blur-md rounded-2xl border border-indigo-900/60 shadow-lg cursor-pointer transform-style-preserve-3d overflow-hidden"
+              className="relative p-8 bg-black/75 backdrop-blur-md rounded-2xl border border-indigo-900/60 shadow-lg cursor-pointer transform-style-preserve-3d overflow-hidden"
             >
               <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
                 <path fill="currentColor" d={getRandomBlobPath()} data-original-d={getRandomBlobPath()} />
