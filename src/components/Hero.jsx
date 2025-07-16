@@ -110,7 +110,7 @@ const Hero = () => {
 
     // Background gradient shift
     gsap.to(containerRef.current, {
-      background: 'linear-gradient(135deg, #111827, #1e3a8a, #290916)',
+      background: 'linear-gradient(135deg, #000000, #010101, #020202)',
       duration: 10,
       repeat: -1,
       yoyo: true,
@@ -146,9 +146,9 @@ const Hero = () => {
         <h1
           id="name"
           ref={titleRef}
-          className="text-5xl md:text-[110px] font-extrabold tracking-tight text-white leading-tight"
+          className="text-5xl md:text-[90px] font-extrabold tracking-tight text-white leading-tight"
         >
-          <span className="text-[170px] max-md:text-[80px]">Hey!</span> <br /> I'm Samandeep Singh
+          <span className="text-[140px] max-md:text-[80px]">Hey!</span> <br /> I'm Samandeep Singh
         </h1>
         <p
           id="heading"
