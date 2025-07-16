@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav ref={navRef} className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50">
       <div className="bg-black/50 backdrop-blur-md rounded-full py-2 px-4 md:py-6 md:px-6 flex items-center justify-center shadow-lg border border-white/10">
         {/* Logo */}
-        <div id="logo" className="text-sm md:text-xl font-bold text-white mr-4 md:mr-6">3S Universe</div>
+        <div id="logo" className="text-md md:text-xl font-bold text-white mr-4 md:mr-6">3S Universe</div>
 
         {/* Desktop Links */}
         <ul className="hidden links md:flex space-x-6">
