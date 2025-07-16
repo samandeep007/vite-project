@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef} className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-black/50 backdrop-blur-md rounded-full py-6 px-12 flex items-center justify-center shadow-lg border border-white/10">
+      <div className="bg-black/50 backdrop-blur-md rounded-full py-6 px-6 flex items-center justify-center shadow-lg border border-white/10">
         {/* Logo */}
         <div id="logo" className="text-xl font-bold text-white mr-6">3S Universe</div>
 
