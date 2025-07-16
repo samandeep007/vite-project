@@ -135,7 +135,8 @@ const SkillsShowcase = () => {
   }, { scope: containerRef });
 
   return (
-    <section
+    <section 
+      id="skills"
       ref={containerRef}
       className="py-20 bg-black text-white relative overflow-hidden"
     >

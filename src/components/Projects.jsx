@@ -125,7 +125,7 @@ const Projects = () => {
   };
 
   return (
-    <section ref={containerRef} className="relative py-32 bg-gradient-to-br from-black via-black to-indigo-950 min-h-screen overflow-hidden text-white">
+    <section ref={containerRef} id="projects" className="relative py-32 bg-gradient-to-br from-black via-black to-indigo-950 min-h-screen overflow-hidden text-white">
       <div className="absolute inset-0 bg-black/30 backdrop-blur-xs"></div>
       <div className="relative z-10 max-w-full mx-auto px-4 overflow-hidden">
         <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight mb-12 text-center">

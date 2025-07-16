@@ -157,7 +157,7 @@ const WorkExperience = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative py-32 min-h-screen bg-black overflow-hidden text-white">
+    <section id="experience" ref={containerRef} className="relative py-32 min-h-screen bg-black overflow-hidden text-white">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
 
       {/* Modern Abstract Shapes Background */}

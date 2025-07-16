@@ -110,7 +110,7 @@ const Certifications = () => {
   const closePdf = () => setIsPdfOpen(false);
 
   return (
-    <section ref={containerRef} className="relative py-20 bg-black min-h-screen overflow-hidden text-white">
+    <section id="certifications" ref={containerRef} className="relative py-20 bg-black min-h-screen overflow-hidden text-white">
       <h2 ref={titleRef} className="text-5xl font-extrabold text-center mb-12 drop-shadow-lg">Certifications</h2>
       <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-6 perspective-2000">
         {certificates.map((cert, idx) => (
