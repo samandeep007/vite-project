@@ -8,8 +8,6 @@ const HorizontalScrollSection = () => {
   const sectionRef = useRef(null);
   const textContainerRef = useRef(null);
 
-  
-
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       const refreshScroll = () => {
@@ -51,9 +49,9 @@ const HorizontalScrollSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen bg-gradient-to-br from-stone-950 via-stone-950 to-slate-950 to overflow-hidden">
+    <section ref={sectionRef} className="hidden md:block relative h-screen bg-gradient-to-br from-stone-950 via-stone-950 to-slate-950 overflow-hidden">
       <div ref={textContainerRef} className="relative flex h-full items-center whitespace-nowrap text-[150px] font-bold text-white">
-        I craft <span className='px-4 text-indigo-400'>bold</span>, <span className='font-style: italic px-12 text-gray-400'>interactive</span> web experiences that actually <span className='font-style: italic pr-8 text-cyan-200'>do</span> something
+        I craft <span className='px-4 text-indigo-400'>bold</span>, <span className='italic px-12 text-gray-400'>interactive</span> web experiences that actually <span className='italic pr-8 text-cyan-200'>do</span> something
       </div>
     </section>
   );
