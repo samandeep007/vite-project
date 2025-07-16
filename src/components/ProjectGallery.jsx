@@ -166,7 +166,7 @@ const ProjectGallery = () => {
         'https://github.com/samandeep007/Project-images/blob/main/kartar/Screenshot%202025-07-15%20172216.png?raw=true',
         'https://github.com/samandeep007/Project-images/blob/main/kartar/Screenshot%202025-07-15%20172228.png?raw=true',
         'https://github.com/samandeep007/Project-images/blob/main/kartar/Screenshot%202025-07-15%20172239.png?raw=true',
-        'https://github.com/samandeep007/Project-images/blob/main/kartar/Screenshot%202025-07-15%20172302.png?raw=true'
+        'https://github.com/samandeep007/Project-images/blob/main/kartar/Screenshot%202025-07-15%20172302.png?raw=true',
       ],
     },
      {
@@ -280,13 +280,13 @@ const ProjectGallery = () => {
 
       panel.addEventListener('mouseenter', () => {
         if (hoverEffect === 'scale') {
-          gsap.to(panel, { scale: 1.1, duration: 0.6, boxShadow: '0 20px 40px rgba(79, 70, 229, 0.6)' });
+          gsap.to(panel, { scale: 1.1, duration: 0.6, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.6)' });
         } else if (hoverEffect === 'tilt') {
           gsap.to(panel, { rotationY: 8, rotationX: 8, duration: 0.6 });
         } else if (hoverEffect === 'glow') {
-          gsap.to(panel, { filter: 'brightness(1.3) drop-shadow(0 0 20px rgba(79, 70, 229, 0.8))', duration: 0.6 });
+          gsap.to(panel, { filter: 'brightness(1.3) drop-shadow(0 0 20px rgba(99,102,241,0.8))', duration: 0.6 });
         } else {
-          gsap.to(panel, { y: -10, boxShadow: '0 30px 60px rgba(0, 0, 0, 0.3)', duration: 0.6 });
+          gsap.to(panel, { y: -10, boxShadow: '0 30px 60px rgba(0,0,0,0.3)', duration: 0.6 });
         }
       });
 
@@ -388,7 +388,7 @@ const Modal = ({ project, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
-      <div className="relative w-4/5 h-4/5 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative w-4/5 h-4/5 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl max-md:w-[95%] max-md:h-[95%]">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-30 text-white/80 hover:text-white p-2 rounded-full bg-gray-900/50"
