@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Flip } from 'gsap/Flip';
+import certificate from "../assets/resume.pdf";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
 
@@ -136,7 +137,7 @@ const Certifications = () => {
       {isPdfOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closePdf}>
           <div ref={pdfModalRef} className="w-11/12 h-4/5 max-w-4xl bg-gray-900 rounded-2xl overflow-hidden border border-indigo-500/30 shadow-2xl transform-style-preserve-3d" onClick={(e) => e.stopPropagation()}>
-            <iframe src="src/assets/resume.pdf" width="100%" height="100%" title="Resume PDF" className="border-none"></iframe> {/* Adjust PDF path */}
+            <iframe src={certificate} width="100%" height="100%" title="Resume PDF" className="border-none"></iframe> {/* Adjust PDF path */}
             <button onClick={closePdf} className="absolute top-4 right-4 text-white text-3xl hover:text-indigo-300 transition-colors">×</button>
           </div>
         </div>
