@@ -46,9 +46,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <ul className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-black/90 backdrop-blur-md rounded-lg flex flex-col items-center py-4 md:hidden space-y-4 shadow-lg">
-          <li><a href="#hero" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
-          <li><a href="#features" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Features</a></li>
-          <li><a href="#showcases" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Showcases</a></li>
+          <li><a href="#about" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">About</a></li>
+          <li><a href="#skills" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Skills</a></li>
+          <li><a href="#experience" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Experience</a></li>
+          <li><a href="#projects" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Projects</a></li>
           <li><a href="#contact" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
         </ul>
       )}
