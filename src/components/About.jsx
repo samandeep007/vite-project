@@ -27,7 +27,7 @@ const About = () => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
       gsap.to(containerRef.current, {
-        background: `radial-gradient(circle at ${x}% ${y}%, #0a0a0f, #101018, #1a1a25)`,
+        background: `radial-gradient(circle at ${x}% ${y}%, #000000, #010101, #020202)`,
         duration: 0.5,
         ease: 'power2.out',
       });
