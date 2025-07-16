@@ -17,6 +17,11 @@ const About = () => {
   const particleRefs = useRef([]);
 
   useGSAP(() => {
+    // Set initial darker background
+    gsap.set(containerRef.current, {
+      background: `radial-gradient(circle at 50% 50%, #000000, #050505, #0a0a0a)`,
+    });
+
     // Background gradient shift with mouse interaction
     const updateGradient = (e) => {
       const x = (e.clientX / window.innerWidth) * 100;
