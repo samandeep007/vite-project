@@ -139,7 +139,7 @@ const Projects = () => {
               className="min-w-[80vw] md:min-w-[60vw] lg:min-w-[40vw] p-8 bg-black/40 backdrop-blur-lg rounded-2xl border border-indigo-500/20 shadow-[0_0_40px_rgba(79,70,229,0.15)] cursor-pointer"
               onClick={() => openModal(project)}
             >
-              <div className="relative h-64 mb-6 overflow-hidden rounded-xl">
+              <div className="relative h-64 max-md:h-48 mb-6 overflow-hidden rounded-xl">
                 {project.media.filter(item => item.type === 'image').map((item, i) => (
                   <div
                     key={i}
@@ -159,21 +159,21 @@ const Projects = () => {
                   </div>
                 )}
               </div>
-              <h3 className="text-3xl font-bold mb-2">{project.name}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              <p className="text-sm text-gray-500 mb-2">Tech Stack: {project.techStack.join(', ')}</p>
-              <p className="text-sm text-gray-500 mb-4">Date: {project.date}</p>
+              <h3 className="text-3xl max-md:text-2xl font-bold mb-2">{project.name}</h3>
+              <p className="text-gray-300 mb-4 max-md:text-sm">{project.description}</p>
+              <p className="text-sm max-md:text-xs text-gray-500 mb-2">Tech Stack: {project.techStack.join(', ')}</p>
+              <p className="text-sm max-md:text-xs text-gray-500 mb-4">Date: {project.date}</p>
               <div className="flex gap-4">
                 <a
                   href={project.live}
-                  className="inline-block bg-indigo-600 py-2 px-4 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors duration-300"
+                  className="inline-block bg-indigo-600 py-2 px-4 max-md:py-1 max-md:px-3 rounded-md text-sm max-md:text-xs font-medium hover:bg-indigo-700 transition-colors duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Live Demo
                 </a>
                 <a
                   href={project.github}
-                  className="inline-block bg-gray-800 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors duration-300"
+                  className="inline-block bg-gray-800 py-2 px-4 max-md:py-1 max-md:px-3 rounded-md text-sm max-md:text-xs font-medium hover:bg-gray-700 transition-colors duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   GitHub
@@ -185,7 +185,7 @@ const Projects = () => {
       </div>
       {selectedProject && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={closeModal}>
-          <div className="max-w-5xl w-full mx-4 p-6 bg-black/90 rounded-2xl border border-indigo-500/30" onClick={(e) => e.stopPropagation()}>
+          <div className="max-w-5xl w-full mx-4 p-6 max-md:p-2 bg-black/90 rounded-2xl border border-indigo-500/30" onClick={(e) => e.stopPropagation()}>
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-2/3">
                 <Slider {...carouselSettings}>
@@ -211,20 +211,20 @@ const Projects = () => {
                 </Slider>
               </div>
               <div className="md:w-1/3 text-white">
-                <h3 className="text-2xl font-bold mb-4">{selectedProject.name}</h3>
-                <p className="text-gray-300 mb-4">{selectedProject.description}</p>
-                <p className="text-sm text-gray-400 mb-2">Tech Stack: {selectedProject.techStack.join(', ')}</p>
-                <p className="text-sm text-gray-400 mb-4">Date: {selectedProject.date}</p>
+                <h3 className="text-2xl max-md:text-xl font-bold mb-4">{selectedProject.name}</h3>
+                <p className="text-gray-300 mb-4 max-md:text-sm">{selectedProject.description}</p>
+                <p className="text-sm max-md:text-xs text-gray-400 mb-2">Tech Stack: {selectedProject.techStack.join(', ')}</p>
+                <p className="text-sm max-md:text-xs text-gray-400 mb-4">Date: {selectedProject.date}</p>
                 <div className="flex gap-4">
                   <a
                     href={selectedProject.live}
-                    className="inline-block bg-indigo-600 py-2 px-4 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors duration-300"
+                    className="inline-block bg-indigo-600 py-2 px-4 max-md:py-1 max-md:px-3 rounded-md text-sm max-md:text-xs font-medium hover:bg-indigo-700 transition-colors duration-300"
                   >
                     Live Demo
                   </a>
                   <a
                     href={selectedProject.github}
-                    className="inline-block bg-gray-800 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors duration-300"
+                    className="inline-block bg-gray-800 py-2 px-4 max-md:py-1 max-md:px-3 rounded-md text-sm max-md:text-xs font-medium hover:bg-gray-700 transition-colors duration-300"
                   >
                     GitHub
                   </a>

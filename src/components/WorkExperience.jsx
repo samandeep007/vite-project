@@ -55,7 +55,7 @@ const WorkExperience = () => {
       shape.setAttribute('class', 'absolute opacity-50');
       shape.style.top = `${gsap.utils.random(10, 80)}%`;
       shape.style.left = `${gsap.utils.random(10, 80)}%`;
-      shape.style.width = `${gsap.utils.random(100, 300)}px`;
+      shape.style.width = `${gsap.utils.random(25, 75)}vw`;
       svg.appendChild(shape);
       shapeRefs.current.push(shape);
     }
@@ -175,22 +175,22 @@ const WorkExperience = () => {
       </svg>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
-        <h2 ref={titleRef} className="text-5xl font-extrabold mb-16 text-center">Work Experience</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
+        <h2 ref={titleRef} className="text-3xl md:text-5xl font-extrabold mb-8 md:mb-16 text-center">Work Experience</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
           {experiences.map((exp, idx) => (
             <div
               key={exp.title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className="relative p-8 bg-black/75 backdrop-blur-md rounded-2xl border border-indigo-900/60 shadow-lg cursor-pointer transform-style-preserve-3d overflow-hidden"
+              className="relative p-4 md:p-8 bg-black/75 backdrop-blur-md rounded-2xl border border-indigo-900/60 shadow-lg cursor-pointer transform-style-preserve-3d overflow-hidden"
             >
               <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
                 <path fill="currentColor" d={getRandomBlobPath()} data-original-d={getRandomBlobPath()} />
               </svg>
-              <h3 className="text-3xl font-bold mb-4 text-white relative z-10">{exp.title}</h3>
-              <p className="text-gray-400 mb-2 relative z-10">{exp.date}</p>
-              {exp.institution && <p className="text-gray-400 mb-4 relative z-10">{exp.institution}</p>}
-              <p className="text-gray-300 relative z-10">{exp.description}</p>
+              <h3 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 text-white relative z-10">{exp.title}</h3>
+              <p className="text-sm md:text-base text-gray-400 mb-1 md:mb-2 relative z-10">{exp.date}</p>
+              {exp.institution && <p className="text-sm md:text-base text-gray-400 mb-2 md:mb-4 relative z-10">{exp.institution}</p>}
+              <p className="text-sm md:text-base text-gray-300 relative z-10">{exp.description}</p>
             </div>
           ))}
         </div>
