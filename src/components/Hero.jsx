@@ -157,7 +157,7 @@ const Hero = () => {
         >
           A Full-Stack Software Developer | Pioneering interactive experiences with React, Node.js, and advanced GSAP animations.
         </p>
-        <div className="mt-8 flex gap-8">
+        <div className="mt-8 flex gap-6">
           <a
             ref={ctaRef}
             href="#projects"
