@@ -259,7 +259,7 @@ I blend clean architecture with thoughtful UI to turn complex ideas into seamles
             <div className="flex gap-4 justify-center">
               <a
                 ref={linkedinRef}
-                href="https://www.linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/samandeep07"
                 className="inline-flex items-center bg-[#0A66C2] text-white py-3 px-8 rounded-md text-xl font-medium hover:bg-[#004182] transition-colors duration-300 shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -269,7 +269,7 @@ I blend clean architecture with thoughtful UI to turn complex ideas into seamles
               </a>
               <a
                 ref={xRef}
-                href="https://x.com/your-handle"
+                href="https://x.com/samandeep0792"
                 className="inline-flex items-center bg-black text-white py-3 px-8 rounded-md text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

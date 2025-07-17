@@ -146,9 +146,9 @@ const Hero = () => {
         <h1
           id="name"
           ref={titleRef}
-          className="text-5xl md:text-[90px] font-extrabold tracking-tight text-white leading-tight"
+          className="text-5xl md:text-[100px] font-extrabold tracking-tight text-white leading-tight"
         >
-          <span className="text-[140px] max-md:text-[80px]">Hey!</span> <br /> I'm Samandeep Singh
+          <span className="text-[140px] max-md:text-[90px]">Hey!</span> <br /> I'm Samandeep Singh
         </h1>
         <p
           id="heading"
@@ -167,7 +167,7 @@ const Hero = () => {
           </a>
           <a
             ref={githubRef}
-            href="https://github.com/your-username"
+            href="https://github.com/samandeep007"
             className="inline-flex items-center bg-gray-950 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg max-md:py-2 max-md:px-4 max-md:text-base"
           >
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
