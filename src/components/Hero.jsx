@@ -146,9 +146,9 @@ const Hero = () => {
         <h1
           id="name"
           ref={titleRef}
-          className="text-5xl md:text-[100px] font-extrabold tracking-tight text-white leading-tight"
+          className="text-5xl md:text-[90px] font-extrabold tracking-tight text-white leading-tight"
         >
-          <span className="text-[140px] max-md:text-[90px]">Hey!</span> <br /> I'm Samandeep Singh
+          <span className="text-[140px] max-md:text-[84px]">Hey!</span> <br /> I'm Samandeep Singh
         </h1>
         <p
           id="heading"

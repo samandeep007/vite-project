@@ -21,9 +21,6 @@ function App() {
   useEffect(() => {
     if (!cursorCoreRef.current || !cursorRingRef.current || !cursorHaloRef.current) return;
 
-    // Hide default cursor
-    document.body.style.cursor = 'none';
-
     const cursorCore = cursorCoreRef.current;
     const cursorRing = cursorRingRef.current;
     const cursorHalo = cursorHaloRef.current;
@@ -39,7 +36,7 @@ function App() {
     };
 
     // Hover effects - expand ring and halo, pulse core
-    const interactiveElements = document.querySelectorAll('a, button, .cursor-pointer');
+    const interactiveElements = document.querySelectorAll('a, button, .cursor-pointer, input, textarea, select');
     interactiveElements.forEach((el) => {
       el.addEventListener('mouseenter', () => {
         gsap.to(cursorCore, { scale: 1.2, duration: 0.3, backgroundColor: 'rgba(99, 102, 241, 1)' });
@@ -78,12 +75,16 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-gray-900 text-white min-h-screen relative">
       {/* Custom Cursor */}
-      <div ref={cursorCoreRef} className="fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-50 bg-gradient-to-br from-indigo-600 to-purple-600 border border-white/30 shadow-[0_0_6px_rgba(99,102,241,0.8)]" />
-      <div ref={cursorRingRef} className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-40 opacity-0.5 border-2 border-indigo-400/70 shadow-[0_0_8px_rgba(99,102,241,0.4)]" />
-      <div ref={cursorHaloRef} className="fixed top-0 left-0 w-24 h-24 rounded-full pointer-events-none z-40 opacity-0.15 bg-radial-gradient from-purple-500/20 to-transparent filter blur" />
-      <style>{`* { cursor: none !important; }`}</style>
+      <div ref={cursorCoreRef} className="fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999] bg-gradient-to-br from-indigo-600 to-purple-600 border border-white/30 shadow-[0_0_6px_rgba(99,102,241,0.8)]" />
+      <div ref={cursorRingRef} className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[9998] opacity-0.5 border-2 border-indigo-400/70 shadow-[0_0_8px_rgba(99,102,241,0.4)]" />
+      <div ref={cursorHaloRef} className="fixed top-0 left-0 w-24 h-24 rounded-full pointer-events-none z-[9997] opacity-0.15 bg-radial-gradient from-purple-500/20 to-transparent filter blur" />
+      <style>{`
+        body, body * {
+          cursor: none !important;
+        }
+      `}</style>
       <Navbar />
       <Hero />
       <About />
