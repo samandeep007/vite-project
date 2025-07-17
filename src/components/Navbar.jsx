@@ -19,13 +19,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav ref={navRef} className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-black/50 backdrop-blur-md rounded-full py-2 px-4 md:py-6 md:px-6 flex items-center justify-center shadow-lg border border-white/10">
+    <nav ref={navRef} className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl">
+      <div className="bg-black/50 backdrop-blur-md rounded-full py-2 px-6 md:py-6 md:px-8 flex items-center justify-center shadow-lg border border-white/10">
         {/* Logo */}
         <div id="logo" className="text-md md:text-xl font-bold text-white mr-4 md:mr-6">3S Universe</div>
 
         {/* Desktop Links */}
         <ul className="hidden links md:flex space-x-6">
+          <li className="nav-item"><a href="#home" className="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
           <li className="nav-item"><a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">About</a></li>
           <li className="nav-item"><a href="#skills" className="text-gray-300 hover:text-white transition-colors duration-300">Skills</a></li>
           <li className="nav-item"><a href="#experience" className="text-gray-300 hover:text-white transition-colors duration-300">Experience</a></li>
@@ -46,6 +47,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <ul className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-black/90 backdrop-blur-md rounded-lg flex flex-col items-center py-4 md:hidden space-y-4 shadow-lg">
+          <li><a href="#home" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
           <li><a href="#about" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">About</a></li>
           <li><a href="#skills" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Skills</a></li>
           <li><a href="#experience" onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors duration-300">Experience</a></li>
