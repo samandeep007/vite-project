@@ -66,7 +66,7 @@ const Hero = () => {
     }, '-=1');
 
     // Subtitle with typing effect
-    const subtitleSplit = new SplitText(subtitleRef.current, { type: 'chars' });
+    const subtitleSplit = new SplitText(subtitleRef.current, { type: 'chars, words' });
     tl.from(subtitleSplit.chars, {
       opacity: 0,
       duration: 0.05,

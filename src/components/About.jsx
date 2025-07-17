@@ -114,7 +114,7 @@ const About = () => {
     });
 
     // Bio text typing animation - single animation for all text
-    const split = new SplitText(bioRef.current, { type: 'chars' });
+    const split = new SplitText(bioRef.current, { type: 'chars, words' });
     gsap.fromTo(
       split.chars,
       {
